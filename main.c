@@ -6,7 +6,7 @@
 /*   By: ttampio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 09:59:56 by ttampio           #+#    #+#             */
-/*   Updated: 2019/10/28 15:32:54 by ttampio          ###   ########.fr       */
+/*   Updated: 2019/10/28 17:16:04 by ttampio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -752,7 +752,7 @@ int	main(void)
 	char	**str_arr;
 	ft_print_run_cmd("str_arr = ft_strsplit(\"This is a funky sentence!\", ' ')");
 
-	str_arr = ft_strsplit("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i');
+	str_arr = ft_strsplit("This is a funky sentence!", ' ');
 	i = 0;
 	while (str_arr[i])
 	{
