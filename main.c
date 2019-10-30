@@ -6,7 +6,7 @@
 /*   By: ttampio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 09:59:56 by ttampio           #+#    #+#             */
-/*   Updated: 2019/10/28 17:16:04 by ttampio          ###   ########.fr       */
+/*   Updated: 2019/10/30 09:04:11 by ttampio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,7 +248,7 @@ int	main(void)
 	ft_print_run_cmd("ft_bzero(STR, 15)");
 	ft_bzero(str1, 15);
 	ft_print_result("STR+15", str1+15);
-	ft_print_result("STR=14", str1+14);
+	ft_print_result("STR+14", str1+14);
 
 	ft_reset_strings(str1, str2, 1, 1);
 
@@ -267,6 +267,7 @@ int	main(void)
 	ft_print_func_name("FT_MEMCPY", BLUE);
 	printf("  ORG SRC(%lu) BEFORE memcpy(): %s\n", sizeof(str1), str1);
 	printf("  ORG DST(%lu) BEFORE memcpy(): %s\n", sizeof(str2), str2);
+	ft_print_run_cmd("memcpy(DST, SRC, 26)");
 	printf("  RETURN VALUE: %s\n", memcpy(str2, str1, 26));
 	printf("  ORG SRC(%lu) AFTER memcpy(): %s\n", sizeof(str1), str1);
 	printf("  ORG DST(%lu) AFTER memcpy(): %s\n\n", sizeof(str2), str2);
@@ -275,6 +276,7 @@ int	main(void)
 
 	printf("  MINE SRC(%lu) BEFORE ft_memcpy(): %s\n", sizeof(str1), str1);
 	printf("  MINE DST(%lu) BEFORE ft_memcpy(): %s\n", sizeof(str2), str2);
+	ft_print_run_cmd("ft_memcpy(DST, SRC, 26)");
 	printf("  RETURN VALUE: %s\n", ft_memcpy(str2, str1, 26));
 	printf("  MINE SRC(%lu) AFTER ft_memcpy(): %s\n", sizeof(str1), str1);
 	printf("  MINE DST(%lu) AFTER ft_memcpy(): %s\n\n", sizeof(str2), str2);
@@ -285,6 +287,7 @@ int	main(void)
 	ft_print_func_name("FT_MEMCCPY", BLUE);
 	printf("  ORG SRC(%lu) BEFORE memcpy(): %s\n", sizeof(str1), str1);
 	printf("  ORG DST(%lu) BEFORE memcpy(): %s\n", sizeof(str2), str2);
+	ft_print_run_cmd("memccpy(DST, SRC, 'a', 26)");
 	printf("  RETURN VALUE: %s\n", memccpy(str2, str1, 'a', 26));
 	printf("  ORG SRC(%lu) AFTER memcpy(): %s\n", sizeof(str1), str1);
 	printf("  ORG DST(%lu) AFTER memcpy(): %s\n\n", sizeof(str2), str2);
@@ -293,6 +296,7 @@ int	main(void)
 
 	printf("  MINE SRC(%lu) BEFORE ft_memcpy(): %s\n", sizeof(str1), str1);
 	printf("  MINE DST(%lu) BEFORE ft_memcpy(): %s\n", sizeof(str2), str2);
+	ft_print_run_cmd("ft_memccpy(DST, SRC, 'a', 26)");
 	printf("  RETURN VALUE: %s\n", ft_memccpy(str2, str1, 'a', 26));
 	printf("  MINE SRC(%lu) AFTER ft_memcpy(): %s\n", sizeof(str1), str1);
 	printf("  MINE DST(%lu) AFTER ft_memcpy(): %s\n\n", sizeof(str2), str2);
@@ -303,6 +307,7 @@ int	main(void)
 	ft_print_func_name("FT_MEMMOVE", BLUE);
 	printf("  ORG SRC(%lu) BEFORE memmove(): %s\n", sizeof(str1), str1);
 	printf("  ORG DST(%lu) BEFORE memmove(): %s\n", sizeof(str1), str1+5);
+	ft_print_run_cmd("memmove(DST+5, SRC, 10)");
 	printf("  RETURN VALUE: %s\n", memmove(str1+5, str1, 10));
 	printf("  ORG SRC(%lu) AFTER memmove(): %s\n", sizeof(str1), str1);
 	printf("  ORG DST(%lu) AFTER memmove(): %s\n\n", sizeof(str1), str1+5);
@@ -311,6 +316,7 @@ int	main(void)
 	
 	printf("  MINE SRC(%lu) BEFORE ft_memmove(): %s\n", sizeof(str1), str1);
 	printf("  MINE DST(%lu) BEFORE ft_memmove(): %s\n", sizeof(str1), str1+5);
+	ft_print_run_cmd("ft_memmove(DST+5, SRC, 10)");
 	printf("  RETURN VALUE: %s\n", ft_memmove(str1+5, str1, 10));
 	printf("  MINE SRC(%lu) AFTER ft_memmove(): %s\n", sizeof(str1), str1);
 	printf("  MINE DST(%lu) AFTER ft_memmove(): %s\n\n", sizeof(str1), str1+5);
@@ -353,6 +359,7 @@ int	main(void)
 	// FT_STRDUP
 	char	*dup;
 
+	dup = NULL;
 	ft_print_func_name("FT_STRDUP", BLUE);
 	printf(" ORG\n");
 	printf("  String to duplicate: %s\n", str1);
@@ -457,7 +464,7 @@ int	main(void)
 
 	ft_reset_strings(str1, str2, 1, 1);
 
-	ft_print_test_strings("MINE", str1, str1, "STR1", "STR2");
+	ft_print_test_strings("MINE", str1, str2, "STR1", "STR2");
 	ft_print_run_cmd("strncat(STR1, STR2, 14)");
 	ft_strncat(str1, str2, 14);
 	ft_print_result("STR1", str1);
@@ -526,13 +533,17 @@ int	main(void)
 	// FT_STRNSTR
 	ft_print_func_name("FT_STRNSTR", BLUE);
 	ft_print_test_strings("ORG", needle, str1, "NEEDLE", "HAYSTACK");
-	ft_print_run_cmd("ft_strnstr(HAYSTACK, NEEDLE, 52)");
+	ft_print_run_cmd("strnstr(HAYSTACK, NEEDLE, 52)");
+	ft_print_result("POINTER", strnstr(str1, needle, 52));
+	ft_print_run_cmd("strnstr(HAYSTACK, NEEDLE, 51)");
 	ft_print_result("POINTER", strnstr(str1, needle, 51));
 
 	ft_reset_strings(str1, str2, 2, 0);
 
 	ft_print_test_strings("MINE", needle, str1, "NEEDLE", "HAYSTACK");
 	ft_print_run_cmd("ft_strnstr(HAYSTACK, NEEDLE, 52)");
+	ft_print_result("POINTER", ft_strnstr(str1, needle, 52));
+	ft_print_run_cmd("ft_strnstr(HAYSTACK, NEEDLE, 51)");
 	ft_print_result("POINTER", ft_strnstr(str1, needle, 51));
 
 	ft_reset_strings(str1, str2, 1, 1);
@@ -583,11 +594,11 @@ int	main(void)
 	ft_print_func_name("FT_ATOI", BLUE);
 	printf(" ORG\n");
 	ft_print_run_cmd("atoi(\"1234\")");
-	printf("  RESULT (INT): %d\n", atoi("-1234"));
+	printf("  RESULT (INT): %d\n", atoi("1234"));
 
 	printf(" MINE\n");
 	ft_print_run_cmd("atoi(\"1234\")");
-	printf("  RESULT (INT): %d\n", ft_atoi("-1234"));
+	printf("  RESULT (INT): %d\n", ft_atoi("1234"));
 
 	// FT_ISALPHA	
 	ft_print_func_name("FT_ISALPHA", BLUE);
@@ -736,7 +747,16 @@ int	main(void)
 	// FT_STRJOIN
 	ft_print_func_name("FT_STRJOIN", BLUE);
 	ft_print_run_cmd("ft_strjoin(\"String one.\",\"String two.\")");
-	printf("%s  RESULT: '%s'%s\n", GREEN, ft_strjoin("String one.", "String two."), RESET);
+	printf("%s  RESULT: '%s'%s\n", GREEN, ft_strjoin(ft_strjoin("My favorite animal is", " "), "the nyancat"), RESET);
+
+		char *s1 = "my favorite animal is";
+	char *s2 = " ";
+	char *s3 = "the nyancat";
+	char *tmp = ft_strjoin(s1, s2);
+	char *res = ft_strjoin(tmp, s3);
+
+	free(tmp);
+	printf("RES %s\n", res);
 
 	// FT_STRTRIM
 	ft_print_func_name("FT_STRTRIM", BLUE);
@@ -914,25 +934,23 @@ int	main(void)
 	ft_reset_strings(str1, str2, 1, 1);
 	ft_print_func_name("FT_STRNDUP", BLUE);
 	ft_print_test_string("ORG", str1, "STRING");
-	ft_print_run_cmd("strndup(STR, 30)");
-	ft_print_result("ORG STRING" ,strndup(str1, 30));
-	printf("%s  ORG STRING LEN %s%s\n\n" , GREEN, strndup(str1, 50), RESET);
-	ft_print_run_cmd("ft_strndup(STR, 30)");
-	ft_print_result("MINE STRING" ,ft_strndup(str1, 30));
-	printf("%s  MINE STRING LEN %s%s\n" , GREEN, strndup(str1, 50), RESET);
-
-	printf("\n---- TESTS END----\n");
+	ft_print_run_cmd("strndup(STR, 20)");
+	ft_print_result("ORG STRING" ,strndup(str1, 20));
+	printf("%s  ORG STRING LEN %zu%s\n\n" , GREEN, ft_strlen(strndup(str1, 20)), RESET);
+	ft_print_run_cmd("ft_strndup(STR, 20)");
+	ft_print_result("MINE STRING" ,ft_strndup(str1, 20));
+	printf("%s  MINE STRING LEN %zu%s\n" , GREEN, ft_strlen(strndup(str1, 20)), RESET);
 
 	// FT_SWAP
 	char st1[] = "STRING 1";
 	char st2[] = "STRING 2";
-	ft_print_func_name("FT_STRNDUP", BLUE);
+	ft_print_func_name("FT_SWAP", BLUE);
 	printf("STR1 = %s | STR2 = %s BEFORE SWAP\n\n", st1, st2);
-	ft_print_run_cmd("ft_swap(STR1, STR2)");
-	ft_swap(&st1, &st2);
+	ft_print_run_cmd("ft_swap((void*)&STR1, (void*)&STR2)");
+	ft_swap((void*)&st1, (void*)&st2);
 	printf("STR1 = %s | STR2 = %s AFTER SWAP\n\n", st1, st2);
 
-
+	printf("\n---- TESTS END----\n");
 
 	return (0);
 }
