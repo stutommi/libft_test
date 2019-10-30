@@ -6,7 +6,7 @@
 /*   By: ttampio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 09:59:56 by ttampio           #+#    #+#             */
-/*   Updated: 2019/10/30 09:04:11 by ttampio          ###   ########.fr       */
+/*   Updated: 2019/10/30 10:33:21 by ttampio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -747,16 +747,7 @@ int	main(void)
 	// FT_STRJOIN
 	ft_print_func_name("FT_STRJOIN", BLUE);
 	ft_print_run_cmd("ft_strjoin(\"String one.\",\"String two.\")");
-	printf("%s  RESULT: '%s'%s\n", GREEN, ft_strjoin(ft_strjoin("My favorite animal is", " "), "the nyancat"), RESET);
-
-		char *s1 = "my favorite animal is";
-	char *s2 = " ";
-	char *s3 = "the nyancat";
-	char *tmp = ft_strjoin(s1, s2);
-	char *res = ft_strjoin(tmp, s3);
-
-	free(tmp);
-	printf("RES %s\n", res);
+	printf("%s  RESULT: '%s'%s\n", GREEN, ft_strjoin("String one.", "String two."), RESET);
 
 	// FT_STRTRIM
 	ft_print_func_name("FT_STRTRIM", BLUE);
