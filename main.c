@@ -6,7 +6,7 @@
 /*   By: ttampio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 09:59:56 by ttampio           #+#    #+#             */
-/*   Updated: 2019/10/30 10:33:21 by ttampio          ###   ########.fr       */
+/*   Updated: 2019/10/31 09:08:01 by ttampio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -757,6 +757,8 @@ int	main(void)
 	printf("%s  RESULT: '%s'%s\n\n", GREEN, ft_strtrim(""), RESET);
 	ft_print_run_cmd("ft_strtrim(NULL)");
 	printf("%s  RESULT: '%s'%s\n", GREEN, ft_strtrim(NULL), RESET);
+	ft_print_run_cmd("ft_strtrim(\"a\")");
+	printf("%s  RESULT: '%s'%s\n", GREEN, ft_strtrim("a"), RESET);
 
 	// FT_STRSPLIT
 	ft_print_func_name("FT_STRSPLIT", BLUE);
