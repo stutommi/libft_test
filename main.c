@@ -6,7 +6,7 @@
 /*   By: ttampio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 09:59:56 by ttampio           #+#    #+#             */
-/*   Updated: 2019/10/31 09:08:01 by ttampio          ###   ########.fr       */
+/*   Updated: 2019/10/31 15:48:07 by ttampio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -860,7 +860,7 @@ int	main(void)
 	printf("POINTER TO LST: '%p' \n", lst);
 
 	// FT_LSTDELONE
-	//lst = ft_lstnew(ft_strdup("This is a test string"), sizeof("This is a test string"));
+	lst = ft_lstnew(ft_strdup("This is a test string"), sizeof("This is a test string"));
 	ft_print_func_name("FT_LSTDELONE", BLUE);
 	ft_lstdelone(&lst, &ft_del);
 	printf("ADDRESS OF POINTER TO LST: '%p' \n", lst);
@@ -891,7 +891,7 @@ int	main(void)
 	ft_print_run_cmd("ft_lstmap(lst, &ft_test_lstmap)");
 	ft_print_list(ft_lstmap(lst, &ft_test_lstmap));
 	
-
+/*
 	ft_print_header("PART 4 - ADdITIONAL FUNCTIONS", RED);
 
 	// FT_LSTADDEND
@@ -942,7 +942,7 @@ int	main(void)
 	ft_print_run_cmd("ft_swap((void*)&STR1, (void*)&STR2)");
 	ft_swap((void*)&st1, (void*)&st2);
 	printf("STR1 = %s | STR2 = %s AFTER SWAP\n\n", st1, st2);
-
+*/
 	printf("\n---- TESTS END----\n");
 
 	return (0);
