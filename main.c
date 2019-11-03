@@ -18,10 +18,12 @@
 #define RESET "\033[0m"
 
 #include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 #include <string.h>
 #include <fcntl.h>
 #include <ctype.h>
+
+/*
 
 t_list	*ft_test_lstmap(t_list *node)
 {
@@ -87,6 +89,7 @@ void	ft_del(void *content, size_t size)
 	free(content);
 	content = NULL;
 }
+*/
 
 void	ft_print_color(char *color, char *s)
 {
@@ -180,28 +183,6 @@ void ft_print_func_name(char *name, char *color)
 	printf("%s", RESET);
 }
 
-/*
-void	ft_is_something_test(char c1, char c2, char *func_name, int (*org_f)(int), int (*f_mine)(int))
-{
-	ft_print_func_name(func_name, BLUE);
-	//printf("\033%s", YELLOW);
-	printf("  Character to test: '%s\n'", c1);
-	//printf("\033[0m");
-	//printf("\033%s", GREEN);
-	//printf(" ORG\n  RESULT (INT): %d\n", org_f(c1));
-	printf("  RESULT (INT): %d\n", f_mine(c1));
-	//printf("\033[0m");
-
-	//printf("\033%s", YELLOW);
-	printf("  Character to test: '%s\n'", c2);
-	//printf("\033[0m");
-	//printf("\033%s", GREEN);
-	//printf(" ORG\n  RESULT (INT): %d\n", org_f(c2));
-	printf("  RESULT (INT): %d\n", f_mine(c2));
-	//printf("\033[0m");
-}
-*/
-
 void ft_reset_strings(char *str1, char *str2, int fill_1, int fill_2)
 {
 	bzero(str1, 100);
@@ -218,7 +199,7 @@ void ft_reset_strings(char *str1, char *str2, int fill_1, int fill_2)
 
 int	main(void)
 {
-	t_list	*lst;
+	//t_list	*lst;
 
 	char	str1[100] = "This is a test string one!";
 	char	str2[100] = "Thus is a test string two!";
@@ -835,6 +816,7 @@ int	main(void)
 	ft_putnbr_fd(123, fd);
 
 
+/*
 	ft_print_header("PART 3 - BONUS PART", YELLOW);
 
 	// FT_LSTNEW
@@ -890,6 +872,9 @@ int	main(void)
 	lst = ft_init_list();
 	ft_print_run_cmd("ft_lstmap(lst, &ft_test_lstmap)");
 	ft_print_list(ft_lstmap(lst, &ft_test_lstmap));
+
+*/
+
 	
 /*
 	ft_print_header("PART 4 - ADdITIONAL FUNCTIONS", RED);
